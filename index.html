@@ -3,52 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dangerous Dave (1990) - Reverse Engineered Web Edition</title>
+    <title>Dangerous Dave Remaster (60 FPS Edition) - by @realzurr</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <div id="app">
       <header class="topbar">
         <div class="brand">
-          <span class="badge">DOS 1990 • LZ91 + RLE</span>
+          <span class="badge">REMASTER 60 FPS • SYNTHWAVE</span>
           <h1>
-            DANGEROUS DAVE
+            DANGEROUS DAVE <span class="remaster-tag">REMASTER</span>
             <small>
-              Web Edition &amp; Reverse Engineering by
+              Modern Engine &amp; Reverse Engineering by
               <a href="https://github.com/realzurr" target="_blank" rel="noopener noreferrer">@realzurr</a>
               • Original (1990) by John Romero
             </small>
           </h1>
         </div>
         <div class="toolbar">
-          <button id="btn-help" title="Ajuda original do jogo (F1)">F1 Ajuda</button>
-          <button id="btn-restart" title="Reiniciar Jogo (F3)">F3 Reiniciar</button>
+          <button id="btn-visual-style" class="active" title="Alternar entre Gráficos Modernos HD (Parallax + Glow + Partículas) e Clássico 1990">
+            ✨ Visual: Moderno HD
+          </button>
+          <button id="btn-audio-style" class="active" title="Alternar entre Sintetizador Polifônico Moderno e PC Speaker 1990">
+            🎹 Áudio: Synth Moderno
+          </button>
+          <button id="btn-bgm" class="active" title="Ativar/Desativar Música Synthwave Procedural">
+            🎵 Música: ON
+          </button>
+          <button id="btn-mute" class="active" title="Ativar/Desativar Todo o Som (M)">
+            🔊 Som: ON
+          </button>
           <button id="btn-quicksave" title="Salvar Estado no Repositório Local (F5)">💾 Salvar</button>
           <button id="btn-quickload" title="Carregar Estado do Repositório Local (F7)">📂 Carregar</button>
-          <button id="btn-pause" title="Pausar Jogo (F9)">F9 Pausar</button>
-          <button id="btn-mute" title="Ativar/Desativar Som PC Speaker (M)">🔊 Som: ON</button>
-          <button id="btn-crt" class="active" title="Filtro CRT Scanlines">📺 CRT</button>
-          <button id="btn-devtools" title="Painel de Engenharia Reversa & Debug">🛠️ Engenharia Reversa</button>
+          <button id="btn-restart" title="Reiniciar Jogo (F3)">F3 Reiniciar</button>
+          <button id="btn-help" title="Ajuda do jogo (F1)">F1 Ajuda</button>
+          <button id="btn-crt" title="Filtro CRT Scanlines">📺 CRT</button>
+          <button id="btn-devtools" title="Painel de Engenharia Reversa & Debug">🛠️ DevTools</button>
         </div>
       </header>
 
       <main class="workspace">
         <div class="monitor-frame">
-          <div id="canvas-wrap" class="canvas-wrap crt">
+          <div id="canvas-wrap" class="canvas-wrap modern-glow">
             <canvas id="game-canvas" width="320" height="200"></canvas>
           </div>
           <div class="controls-hint">
-            <span><strong>Setas / WASD:</strong> Mover / Escalar</span>
-            <span><strong>Cima / Espaço:</strong> Pular</span>
-            <span><strong>Ctrl / Z:</strong> Atirar</span>
-            <span><strong>Alt / X / Shift:</strong> Jetpack</span>
-            <span><strong>F1:</strong> Help</span>
-            <span><strong>F3:</strong> Restart</span>
-            <span><strong>F5/F7:</strong> Save/Load</span>
-            <span><strong>F9:</strong> Pause</span>
+            <span><strong>Setas / WASD:</strong> Mover / Escalar (60 FPS)</span>
+            <span><strong>Cima / Espaço:</strong> Pulo Ágil (Coyote Time)</span>
+            <span><strong>Shift / C:</strong> ⚡ Cyber Dash</span>
+            <span><strong>Ctrl / Z:</strong> 🔫 Laser Blaster</span>
+            <span><strong>Alt / X:</strong> 🚀 Jetpack</span>
+            <span><strong>F5 / F7:</strong> Quick Save / Load</span>
           </div>
           <footer class="credits-bar">
-            <span>Engenharia Reversa, Extrator Binário &amp; Motor Web: <a href="https://github.com/realzurr" target="_blank" rel="noopener noreferrer"><strong>realzurr</strong> (github.com/realzurr)</a></span>
+            <span>Engenharia Reversa, Remasterização 60 FPS &amp; Motor Web: <a href="https://github.com/realzurr" target="_blank" rel="noopener noreferrer"><strong>realzurr</strong> (github.com/realzurr)</a></span>
             <span>•</span>
             <span>Jogo Original MS-DOS (1990): <strong>John Romero</strong> / Softdisk, Inc.</span>
           </footer>
@@ -56,7 +64,7 @@
 
         <aside id="devtools-panel" class="devtools hidden">
           <div class="devtools-header">
-            <h2>🔍 Inspector: DAVE.EXE (Unpacked)</h2>
+            <h2>🔍 Inspector: DAVE.EXE (Remaster)</h2>
             <button id="btn-close-devtools" class="icon-btn">✕</button>
           </div>
 
@@ -78,7 +86,7 @@
           </div>
 
           <div class="devtools-section">
-            <h3>Sintetizador PC Speaker (0x1C2E0 "SPK")</h3>
+            <h3>Sintetizador de Som (Moderno / PC Speaker)</h3>
             <div class="sound-grid" id="sound-buttons"></div>
           </div>
 

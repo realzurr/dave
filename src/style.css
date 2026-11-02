@@ -1,10 +1,11 @@
 :root {
-  --bg: #0c0e14;
-  --panel: #151922;
-  --border: #2a3142;
-  --accent: #ff5555;
-  --accent-gold: #ffb86c;
-  --text: #e6edf3;
+  --bg: #070912;
+  --panel: rgba(16, 21, 36, 0.88);
+  --border: #26314d;
+  --accent: #00e5ff;
+  --accent-pink: #ff2a85;
+  --accent-gold: #ffd700;
+  --text: #f0f6fc;
   --muted: #8b949e;
 }
 
@@ -15,7 +16,10 @@
 }
 
 body {
-  background: radial-gradient(circle at center, #181c26 0%, #090b10 100%);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 229, 255, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(255, 42, 133, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at center, #12172a 0%, #05070e 100%);
   color: var(--text);
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
@@ -35,9 +39,10 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background: rgba(21, 25, 34, 0.92);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(8px);
+  background: rgba(11, 15, 27, 0.9);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -49,7 +54,7 @@ body {
 }
 
 .badge {
-  background: #2b1d28;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.18), rgba(255, 42, 133, 0.18));
   color: var(--accent);
   border: 1px solid var(--accent);
   font-family: monospace;
@@ -57,6 +62,7 @@ body {
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
 }
 
 .brand h1 {
@@ -64,6 +70,13 @@ body {
   letter-spacing: 1px;
   font-weight: 800;
   color: #fff;
+}
+
+.remaster-tag {
+  background: linear-gradient(90deg, #00e5ff, #ff2a85);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
 }
 
 .brand h1 small {
@@ -83,7 +96,7 @@ body {
 .brand h1 small a:hover,
 .credits-bar a:hover {
   text-decoration: underline;
-  color: #ffd19a;
+  color: #ffe566;
 }
 
 .credits-bar {
@@ -97,15 +110,15 @@ body {
 
 .toolbar {
   display: flex;
-  gap: 8px;
+  gap: 7px;
   flex-wrap: wrap;
 }
 
 button {
-  background: #1f2533;
+  background: #171e30;
   color: var(--text);
   border: 1px solid var(--border);
-  padding: 6px 12px;
+  padding: 6px 11px;
   border-radius: 6px;
   font-size: 12px;
   font-weight: 600;
@@ -114,14 +127,16 @@ button {
 }
 
 button:hover {
-  background: #2c3548;
-  border-color: #485470;
+  background: #232d47;
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 button.active {
-  background: #2d1f2d;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.18), rgba(255, 42, 133, 0.16));
   border-color: var(--accent);
-  color: #ff9999;
+  color: #7ef4ff;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
 }
 
 .workspace {
@@ -143,18 +158,26 @@ button.active {
 .canvas-wrap {
   position: relative;
   background: #000;
-  border: 10px solid #222631;
-  border-radius: 12px;
+  border: 8px solid #192034;
+  border-radius: 14px;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.85),
-    0 0 0 2px #353c4e,
+    0 0 0 1px rgba(0, 229, 255, 0.35),
     inset 0 0 20px rgba(0, 0, 0, 0.8);
   overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.canvas-wrap.modern-glow {
+  box-shadow:
+    0 20px 65px rgba(0, 0, 0, 0.9),
+    0 0 32px rgba(0, 229, 255, 0.22),
+    0 0 64px rgba(255, 42, 133, 0.12),
+    0 0 0 1.5px rgba(0, 229, 255, 0.45);
 }
 
 #game-canvas {
   display: block;
-  /* 320x200 scaled 3x with 4:3 CRT aspect correction (960x720) */
   width: 960px;
   height: 720px;
   max-width: calc(100vw - 60px);
@@ -184,14 +207,14 @@ button.active {
   gap: 14px;
   font-size: 12px;
   color: var(--muted);
-  background: rgba(21, 25, 34, 0.8);
+  background: rgba(14, 19, 34, 0.85);
   padding: 8px 16px;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0, 229, 255, 0.22);
 }
 
 .controls-hint strong {
-  color: var(--accent-gold);
+  color: var(--accent);
 }
 
 .devtools {
@@ -206,6 +229,7 @@ button.active {
   flex-direction: column;
   gap: 16px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
 }
 
 .devtools.hidden {
@@ -222,7 +246,7 @@ button.active {
 
 .devtools-header h2 {
   font-size: 14px;
-  color: var(--accent-gold);
+  color: var(--accent);
 }
 
 .devtools-section {
@@ -260,11 +284,11 @@ button.active {
 .telemetry {
   font-family: monospace;
   font-size: 11px;
-  background: #0d1017;
+  background: #080b14;
   padding: 8px;
   border-radius: 6px;
-  border: 1px solid #222836;
-  color: #7ee787;
+  border: 1px solid #1d263b;
+  color: #00e5ff;
   line-height: 1.5;
 }
 
@@ -280,10 +304,10 @@ button.active {
   gap: 6px;
   max-height: 220px;
   overflow-y: auto;
-  background: #0d1017;
+  background: #080b14;
   padding: 8px;
   border-radius: 6px;
-  border: 1px solid #222836;
+  border: 1px solid #1d263b;
 }
 
 .sprite-card {
@@ -291,8 +315,8 @@ button.active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #161b26;
-  border: 1px solid #252d3f;
+  background: #121829;
+  border: 1px solid #232e48;
   border-radius: 4px;
   padding: 4px;
   font-family: monospace;

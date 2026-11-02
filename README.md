@@ -1,9 +1,28 @@
-# Dangerous Dave (1990) — Engenharia Reversa & Edição Web
+# Dangerous Dave (1990) — Remaster 60 FPS & Engenharia Reversa
 
-> **Engenharia Reversa, Extrator Binário & Codificação Web:** [**realzurr**](https://github.com/realzurr) (`github.com/realzurr`)  
+> **Engenharia Reversa, Remasterização 60 FPS, Extrator Binário & Codificação Web:** [**realzurr**](https://github.com/realzurr) (`github.com/realzurr`)  
 > **Jogo Original de MS-DOS (1990):** **John Romero** / *Softdisk, Inc.*
 >
-> Reconstrução completa para Web (**HTML5 Canvas + TypeScript + Web Audio API**) a partir da engenharia reversa direta dos binários originais de MS-DOS de **Dangerous Dave (1990)**.
+> Reconstrução e **Remasterização Moderna em 60 FPS** para Web (**HTML5 Canvas + TypeScript + Web Audio Synthwave**) a partir da engenharia reversa direta dos binários originais de MS-DOS de **Dangerous Dave (1990)**.
+
+---
+
+## ✨ Novidades da Edição Remaster (`branch: remaster`)
+
+Esta branch (`remaster`) moderniza os gráficos, o áudio e a jogabilidade de *Dangerous Dave*, mantendo a opção de alternar em tempo real na barra superior entre o **Modo Moderno HD** e o **Modo Clássico 1990**:
+
+1. **⚡ Mais Agilidade e Física Contínua a 60 FPS (`src/engine.ts`)**:
+   - **Câmera Suave Contínua (`cameraX` Lerp)**: Fim do congelamento de tela a cada 15 colunas — a câmera acompanha o Dave suavemente em sub-pixel por todo o mapa de `1600px`.
+   - **Cyber Dash (`Shift` ou `C`)**: Nova mecânica de *Dash* horizontal em alta velocidade com invulnerabilidade a projéteis, rastro neon ciano (*afterimages*) e barra de recarga no HUD.
+   - **Coyote Time, Jump Buffering & Pulo de Altura Variável**: Controles ultra-responsivos com aceleração fluida e efeito elástico *Squash & Stretch* ao pular e aterrissar.
+   - **Sistema de Combo (`x2` a `x8`)**: Coletar tesouros em sequência multiplica os pontos e eleva a harmonia sonora dos cristais.
+2. **🎨 Gráficos Modernos HD (`src/renderer.ts`)**:
+   - **Cenários em Parallax Multi-Camadas**: Fundos dinâmicos com cavernas subterrâneas, estrelas cintilantes e grades geométricas que mudam de paleta conforme a fase.
+   - **Iluminação Dinâmica & Bevel 3D**: Brilho neon em troféus, armas, jetpacks e portais, refração de ondas na água, aura de calor no fogo e relevo especular 3D nos blocos.
+   - **Sistema de Partículas, Textos Flutuantes & Screen Shake**: Faíscas, fumaça de propulsão no Jetpack, poeira ao pular/pousar, explosões com tremor de câmera e popups de pontuação (`+500 x3!`).
+3. **🎹 Áudio Sintetizado Polifônico & Trilha Synthwave (`src/audio.ts`)**:
+   - **Sequenciador Synthwave Procedural**: Trilha sonora eletrônica gerada em tempo real via Web Audio API (baixo *sawtooth* filtrado, *kick* e arpejos melódicos).
+   - **Efeitos Sonoros Polifônicos Modernos**: Disparos de *Laser Blaster*, *whoosh* de *Dash*, acordes de cristal nos tesouros, explosões com *sub-bass* e fanfarra de troféu (com botão para alternar para o **PC Speaker 1990** a qualquer momento).
 
 ---
 

@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "quicksave",
+    "name": "Quick Save",
+    "level": 0,
+    "score": 0,
+    "lives": 3,
+    "hasGun": false,
+    "hasTrophy": false,
+    "jetpackFuel": 0,
+    "inWarpZone": false,
+    "daveX": 32,
+    "daveY": 144,
+    "scrollX": 0,
+    "savedAt": "2026-11-02T00:49:29.441Z"
+  }
+]
