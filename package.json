@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Reverse-engineered web port of Dangerous Dave (1990 DOS) by realzurr (original game by John Romero)",
   "author": "realzurr <https://github.com/realzurr>",
+  "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/realzurr",
   "type": "module",
   "scripts": {

@@ -1,0 +1,92 @@
+MIT License with Attribution & Original Work Notice
+====================================================
+
+ Parte I — Código de Engenharia Reversa, Extrator Binário e Motor Web
+---------------------------------------------------------------------
+Copyright (c) 2026 realzurr (https://github.com/realzurr)
+
+Todo o processo de engenharia reversa documentado, scripts de descompactação
+(LZEXE 0.91 / RLE), ferramentas de extração de assets (`scripts/`), arquitetura
+de persistência local e código-fonte do motor Web em TypeScript / HTML5 Canvas /
+Web Audio API (`src/`) são de autoria de **realzurr** (https://github.com/realzurr).
+
+ Parte II — Créditos e Direitos da Obra Original (MS-DOS, 1990)
+---------------------------------------------------------------------
+Jogo Original: **Dangerous Dave** (1990)
+Autor Original: **John Romero**
+Publicadora Original: **Softdisk, Inc.**
+
+Os arquivos binários originais de MS-DOS (`DAVE.EXE`, `EGADAVE.DAV`, `DSCORES.DAV`),
+bem como o design original de níveis, sprites, paleta de cores, efeitos sonoros e
+a marca *Dangerous Dave*, são propriedade intelectual de seus respectivos criadores
+originais (**John Romero** / **Softdisk, Inc.**) e são utilizados neste projeto
+exclusivamente para fins de preservação histórica, estudo técnico de engenharia
+reversa e interoperabilidade educacional.
+
+=====================================================================
+TERMOS DE LICENCIAMENTO (PORTUGUÊS)
+=====================================================================
+
+É concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia
+do código-fonte de engenharia reversa e do motor Web deste projeto ("Software"),
+para lidar com o Software sem restrições, incluindo, sem limitação, os direitos
+de usar, copiar, modificar, mesclar, publicar, distribuir,ublicenciar e/ou
+vender cópias do Software, sujeito às seguintes condições obrigatórias:
+
+1. **Crédito de Engenharia Reversa e Implementação Web**:
+   Qualquer redistribuição, fork, derivado ou publicação baseada neste código
+   ou documentação técnica DEVE manter o crédito visível ao autor do processo de
+   engenharia reversa e versão Web:
+   **realzurr (https://github.com/realzurr)**.
+
+2. **Crédito ao Autor do Jogo Original**:
+   Qualquer uso, exibição ou distribuição associada ao jogo DEVE manter o crédito
+   visível ao criador da obra original de 1990:
+   **John Romero / Softdisk, Inc.**
+
+3. Os avisos de copyright acima e este aviso de permissão devem ser incluídos em
+   todas as cópias ou partes substanciais do Software.
+
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU
+IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS DE COMERCIALIZAÇÃO,
+ADEQUAÇÃO A UMA FINALIDADE ESPECÍFICA E NÃO VIOLAÇÃO. EM NENHUM CASO OS AUTORES
+OU TITULARES DOS DIREITOS AUTORAIS SERÃO RESPONSÁVEIS POR QUALQUER RECLAMAÇÃO,
+DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU
+DE OUTRA FORMA, DECORRENTE DE, FORA DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU
+OUTRAS NEGOCIAÇÕES NO SOFTWARE.
+
+=====================================================================
+LICENSE TERMS (ENGLISH)
+=====================================================================
+
+Copyright (c) 2026 realzurr (https://github.com/realzurr) — Reverse Engineering & Web Engine
+Original Game Copyright (c) 1990 John Romero / Softdisk, Inc. — "Dangerous Dave"
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the reverse-engineering tooling, documentation, and web engine source code
+of this project (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, subject to the
+following mandatory conditions:
+
+1. **Reverse Engineering & Web Port Attribution**:
+   All copies, redistributions, or derivative works of the Software or its
+   reverse-engineering documentation MUST retain clear attribution to
+   **realzurr (https://github.com/realzurr)** as the author of the reverse
+   engineering process and web implementation.
+
+2. **Original Game Attribution**:
+   All copies or public presentations MUST retain clear credit to
+   **John Romero** and **Softdisk, Inc.** as the original creators of
+   *Dangerous Dave* (1990).
+
+3. The above copyright notices and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

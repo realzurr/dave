@@ -24,7 +24,7 @@
 5. [Repositório Local de Dados e API de Persistência](#-repositório-local-de-dados-e-api-de-persistência)
 6. [Controles e Inspector de Engenharia Reversa](#-controles-e-inspector-de-engenharia-reversa)
 7. [Como Executar o Projeto](#-como-executar-o-projeto)
-8. [Autoria & Créditos](#-autoria--créditos)
+8. [Autoria, Créditos & Licença](#-autoria-créditos--licença)
 
 ---
 
@@ -361,10 +361,21 @@ npm run build
 
 ---
 
-## 👨‍💻 Autoria & Créditos
+## 👨‍💻 Autoria, Créditos & Licença
 
-- **Engenharia Reversa, Descompactador LZ91/RLE, Extração de Assets e Motor Web (TypeScript / HTML5 Canvas / Web Audio API):**  
+### Autoria e Créditos
+- **Processo de Engenharia Reversa, Descompactador LZ91/RLE, Extração de Assets e Motor Web (TypeScript / HTML5 Canvas / Web Audio API):**  
   Desenvolvido por **[realzurr](https://github.com/realzurr)** — [`github.com/realzurr`](https://github.com/realzurr)
 - **Jogo Original (*Dangerous Dave*, MS-DOS, 1990):**  
-  Criado e programado originalmente por **John Romero** e publicado pela **Softdisk, Inc.** Todos os direitos sobre a obra original, gráficos, níveis e efeitos sonoros pertencem aos seus respectivos criadores.
+  Criado e programado originalmente por **John Romero** e publicado pela **Softdisk, Inc.**
+
+### 📜 Licença ([`LICENSE`](./LICENSE))
+
+Este repositório é regido pela **Licença MIT com Atribuição Obrigatória e Aviso de Obra Original** (consulte o arquivo [`LICENSE`](./LICENSE) para o texto integral em Português e Inglês):
+
+1. **Código de Engenharia Reversa e Implementação Web (`Copyright (c) 2026 realzurr`)**:  
+   O código-fonte do motor Web (`src/`), o extrator binário (`scripts/extract.mjs`), a arquitetura do repositório local e a documentação técnica de engenharia reversa são licenciados sob os termos da licença MIT, sendo **obrigatória a manutenção do crédito visível a [realzurr](https://github.com/realzurr) (`https://github.com/realzurr`)** em qualquer cópia, redistribuição ou trabalho derivado.
+2. **Obra Original (`Copyright (c) 1990 John Romero / Softdisk, Inc.`)**:  
+   Os binários originais de MS-DOS (`DAVE.EXE`, `EGADAVE.DAV`, `DSCORES.DAV`), bem como os gráficos, mapas e efeitos sonoros originais de *Dangerous Dave*, permanecem sob titularidade intelectual de **John Romero / Softdisk, Inc.**, exigindo atribuição expressa aos autores originais em qualquer apresentação ou distribuição, sendo utilizados neste projeto para fins de preservação histórica, estudo de engenharia reversa e interoperabilidade educacional.
+
 
