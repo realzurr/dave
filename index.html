@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dangerous Dave (1990) - Reverse Engineered Web Edition</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="badge">DOS 1990 • LZ91 + RLE</span>
+          <h1>DANGEROUS DAVE <small>Web Reverse-Engineered Edition</small></h1>
+        </div>
+        <div class="toolbar">
+          <button id="btn-help" title="Ajuda original do jogo (F1)">F1 Ajuda</button>
+          <button id="btn-restart" title="Reiniciar Jogo (F3)">F3 Reiniciar</button>
+          <button id="btn-quicksave" title="Salvar Estado no Repositório Local (F5)">💾 Salvar</button>
+          <button id="btn-quickload" title="Carregar Estado do Repositório Local (F7)">📂 Carregar</button>
+          <button id="btn-pause" title="Pausar Jogo (F9)">F9 Pausar</button>
+          <button id="btn-mute" title="Ativar/Desativar Som PC Speaker (M)">🔊 Som: ON</button>
+          <button id="btn-crt" class="active" title="Filtro CRT Scanlines">📺 CRT</button>
+          <button id="btn-devtools" title="Painel de Engenharia Reversa & Debug">🛠️ Engenharia Reversa</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <div class="monitor-frame">
+          <div id="canvas-wrap" class="canvas-wrap crt">
+            <canvas id="game-canvas" width="320" height="200"></canvas>
+          </div>
+          <div class="controls-hint">
+            <span><strong>Setas / WASD:</strong> Mover / Escalar</span>
+            <span><strong>Cima / Espaço:</strong> Pular</span>
+            <span><strong>Ctrl / Z:</strong> Atirar</span>
+            <span><strong>Alt / X / Shift:</strong> Jetpack</span>
+            <span><strong>F1:</strong> Help</span>
+            <span><strong>F3:</strong> Restart</span>
+            <span><strong>F9:</strong> Pause</span>
+          </div>
+        </div>
+
+        <aside id="devtools-panel" class="devtools hidden">
+          <div class="devtools-header">
+            <h2>🔍 Inspector: DAVE.EXE (Unpacked)</h2>
+            <button id="btn-close-devtools" class="icon-btn">✕</button>
+          </div>
+
+          <div class="devtools-section">
+            <h3>Seleção de Fase & Warp Zones</h3>
+            <div class="level-grid" id="level-buttons"></div>
+            <div class="warp-grid" id="warp-buttons"></div>
+          </div>
+
+          <div class="devtools-section">
+            <h3>Cheats / Debug de Estado</h3>
+            <div class="cheat-row">
+              <button id="btn-give-jetpack">🚀 Dar Jetpack</button>
+              <button id="btn-give-gun">🔫 Dar Arma</button>
+              <button id="btn-give-trophy">🏆 Dar Troféu</button>
+              <button id="btn-godmode">🛡️ God Mode: OFF</button>
+            </div>
+            <div id="debug-telemetry" class="telemetry"></div>
+          </div>
+
+          <div class="devtools-section">
+            <h3>Sintetizador PC Speaker (0x1C2E0 "SPK")</h3>
+            <div class="sound-grid" id="sound-buttons"></div>
+          </div>
+
+          <div class="devtools-section">
+            <h3>Sprites Extraídos (158 VGA Sprites)</h3>
+            <div class="sprite-gallery" id="sprite-gallery"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
