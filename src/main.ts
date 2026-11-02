@@ -46,6 +46,11 @@ async function bootstrap() {
       case 'KeyZ':
         engine.keys.shoot = pressed;
         break;
+      case 'ShiftLeft':
+      case 'ShiftRight':
+      case 'KeyC':
+        engine.keys.dash = pressed;
+        break;
     }
   };
 
@@ -79,17 +84,42 @@ async function bootstrap() {
   });
 
   // ==========================================================================
-  // Toolbar & Reverse Engineering DevTools UI
+  // Toolbar & Remaster Controls UI
   // ==========================================================================
+  const btnVisualStyle = document.getElementById('btn-visual-style')!;
+  const btnAudioStyle = document.getElementById('btn-audio-style')!;
+  const btnBgm = document.getElementById('btn-bgm')!;
   const btnHelp = document.getElementById('btn-help')!;
   const btnRestart = document.getElementById('btn-restart')!;
-  const btnPause = document.getElementById('btn-pause')!;
   const btnMute = document.getElementById('btn-mute')!;
   const btnCrt = document.getElementById('btn-crt')!;
   const btnDevtools = document.getElementById('btn-devtools')!;
   const btnCloseDevtools = document.getElementById('btn-close-devtools')!;
   const devtoolsPanel = document.getElementById('devtools-panel')!;
   const canvasWrap = document.getElementById('canvas-wrap')!;
+
+  btnVisualStyle.addEventListener('click', () => {
+    renderer.style = renderer.style === 'MODERN' ? 'CLASSIC' : 'MODERN';
+    const isModern = renderer.style === 'MODERN';
+    btnVisualStyle.textContent = isModern ? '✨ Visual: Moderno HD' : '🕹️ Visual: Clássico 1990';
+    btnVisualStyle.classList.toggle('active', isModern);
+    canvasWrap.classList.toggle('modern-glow', isModern);
+  });
+
+  btnAudioStyle.addEventListener('click', () => {
+    audio.style = audio.style === 'MODERN' ? 'CLASSIC' : 'MODERN';
+    const isModern = audio.style === 'MODERN';
+    btnAudioStyle.textContent = isModern ? '🎹 Áudio: Synth Moderno' : '📟 Áudio: PC Speaker 1990';
+    btnAudioStyle.classList.toggle('active', isModern);
+    audio.startBgm();
+  });
+
+  btnBgm.addEventListener('click', () => {
+    audio.bgmEnabled = !audio.bgmEnabled;
+    if (audio.bgmEnabled) audio.startBgm();
+    btnBgm.textContent = audio.bgmEnabled ? '🎵 Música: ON' : '🎵 Música: OFF';
+    btnBgm.classList.toggle('active', audio.bgmEnabled);
+  });
 
   btnHelp.addEventListener('click', () => {
     engine.helpPage = (engine.helpPage + 1) % 4;
@@ -109,12 +139,6 @@ async function bootstrap() {
     if (saves.length > 0) {
       engine.loadSaveSlot(saves[0]);
       audio.play(6, true);
-    }
-  });
-
-  btnPause.addEventListener('click', () => {
-    if (engine.state === 'PLAYING') {
-      engine.paused = !engine.paused;
     }
   });
 
@@ -184,7 +208,7 @@ async function bootstrap() {
     btnGod.classList.toggle('active', engine.godMode);
   });
 
-  // Populate PC Speaker Sound Synthesizer buttons
+  // Populate Sound Synthesizer buttons
   const soundGrid = document.getElementById('sound-buttons')!;
   for (const s of gameData.sounds) {
     const b = document.createElement('button');
@@ -215,26 +239,25 @@ async function bootstrap() {
   const telemetryEl = document.getElementById('debug-telemetry')!;
   const updateTelemetry = () => {
     if (devtoolsPanel.classList.contains('hidden')) return;
-    const worldX = engine.scrollX * 16 + engine.dave.x;
-    const col = Math.floor(worldX / 16);
+    const col = Math.floor(engine.dave.worldX / 16);
     const row = Math.floor((engine.dave.y - 16) / 16);
     telemetryEl.innerHTML = [
       `State: ${engine.state} | Level: ${engine.currentLevel + 1}${engine.inWarpZone ? ' (WARP ZONE)' : ''}`,
-      `Dave Screen: (${engine.dave.x}, ${engine.dave.y}) | Grid: (${col}, ${row})`,
-      `ScrollX: ${engine.scrollX}/80 | Jetpack: ${engine.dave.jetpackFuel}/255`,
-      `Trophy: ${engine.dave.hasTrophy} | Gun: ${engine.dave.hasGun} | Lives: ${engine.lives}`,
+      `Dave World: (${engine.dave.worldX.toFixed(1)}, ${engine.dave.y.toFixed(1)}) | Grid: (${col}, ${row})`,
+      `CameraX: ${engine.cameraX.toFixed(1)}px | Combo: x${engine.comboCount}`,
+      `Dash CD: ${engine.dave.dashCooldown} | Particles: ${engine.particles.length}`,
     ].join('<br/>');
   };
 
   // ==========================================================================
-  // Main Game Loop (~15.6 Hz DOS Game Logic + 60 FPS Render)
+  // Main Game Loop (60 Hz Continuous Physics + 60 FPS Render)
   // ==========================================================================
-  const TICK_MS = 64; // ~15.625 ticks/sec matching original DOS game speed
+  const TICK_MS = 1000 / 60; // 16.67ms (60 FPS smooth physics)
   let lastTime = performance.now();
   let accumulator = 0;
 
   const loop = (now: number) => {
-    const dt = Math.min(200, now - lastTime);
+    const dt = Math.min(100, now - lastTime);
     lastTime = now;
     accumulator += dt;
 
@@ -252,5 +275,5 @@ async function bootstrap() {
 }
 
 bootstrap().catch((err) => {
-  console.error('Failed to bootstrap Dangerous Dave Web:', err);
+  console.error('Failed to bootstrap Dangerous Dave Remaster:', err);
 });
