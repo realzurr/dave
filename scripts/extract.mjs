@@ -513,7 +513,8 @@ if (fs.existsSync(dscoresPath)) {
 const gameData = {
   meta: {
     game: 'Dangerous Dave (1990)',
-    author: 'John Romero / Softdisk, Inc.',
+    originalAuthor: 'John Romero / Softdisk, Inc.',
+    reverseEngineeredBy: 'realzurr (https://github.com/realzurr)',
     unpackedExeSize: raw.length,
     extractedAt: new Date().toISOString(),
   },

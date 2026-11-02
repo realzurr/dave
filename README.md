@@ -1,6 +1,9 @@
 # Dangerous Dave (1990) — Engenharia Reversa & Edição Web
 
-> Reconstrução completa para Web (**HTML5 Canvas + TypeScript + Web Audio API**) a partir da engenharia reversa direta dos binários originais de MS-DOS de **Dangerous Dave (1990)**, criado por **John Romero** para a *Softdisk, Inc.*
+> **Engenharia Reversa, Extrator Binário & Codificação Web:** [**realzurr**](https://github.com/realzurr) (`github.com/realzurr`)  
+> **Jogo Original de MS-DOS (1990):** **John Romero** / *Softdisk, Inc.*
+>
+> Reconstrução completa para Web (**HTML5 Canvas + TypeScript + Web Audio API**) a partir da engenharia reversa direta dos binários originais de MS-DOS de **Dangerous Dave (1990)**.
 
 ---
 
@@ -21,6 +24,7 @@
 5. [Repositório Local de Dados e API de Persistência](#-repositório-local-de-dados-e-api-de-persistência)
 6. [Controles e Inspector de Engenharia Reversa](#-controles-e-inspector-de-engenharia-reversa)
 7. [Como Executar o Projeto](#-como-executar-o-projeto)
+8. [Autoria & Créditos](#-autoria--créditos)
 
 ---
 
@@ -354,3 +358,13 @@ Para gerar o bundle estático de produção em `dist/`:
 ```bash
 npm run build
 ```
+
+---
+
+## 👨‍💻 Autoria & Créditos
+
+- **Engenharia Reversa, Descompactador LZ91/RLE, Extração de Assets e Motor Web (TypeScript / HTML5 Canvas / Web Audio API):**  
+  Desenvolvido por **[realzurr](https://github.com/realzurr)** — [`github.com/realzurr`](https://github.com/realzurr)
+- **Jogo Original (*Dangerous Dave*, MS-DOS, 1990):**  
+  Criado e programado originalmente por **John Romero** e publicado pela **Softdisk, Inc.** Todos os direitos sobre a obra original, gráficos, níveis e efeitos sonoros pertencem aos seus respectivos criadores.
+

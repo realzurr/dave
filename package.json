@@ -1,7 +1,9 @@
 {
   "name": "dangerous-dave-web",
   "version": "1.0.0",
-  "description": "Reverse-engineered web port of Dangerous Dave (1990 DOS) by John Romero",
+  "description": "Reverse-engineered web port of Dangerous Dave (1990 DOS) by realzurr (original game by John Romero)",
+  "author": "realzurr <https://github.com/realzurr>",
+  "homepage": "https://github.com/realzurr",
   "type": "module",
   "scripts": {
     "extract": "node scripts/extract.mjs",
