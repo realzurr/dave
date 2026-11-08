@@ -5,7 +5,7 @@ import { GameDataBundle } from './types';
 
 async function bootstrap() {
   const canvas = document.getElementById('game-canvas') as HTMLCanvasElement;
-  const res = await fetch('/assets/gamedata.json');
+  const res = await fetch('./assets/gamedata.json');
   const gameData: GameDataBundle = await res.json();
 
   const renderer = new VGARenderer(canvas);

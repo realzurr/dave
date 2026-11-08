@@ -167,5 +167,6 @@ function localDataRepositoryPlugin(): Plugin {
 }
 
 export default defineConfig({
+  base: './',
   plugins: [localDataRepositoryPlugin()],
 });
